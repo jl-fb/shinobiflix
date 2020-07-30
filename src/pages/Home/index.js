@@ -19,14 +19,14 @@ function Home() {
         url={categorias[0].videos[0].url}
         videoDescription={"O que é Front-end? Trabalhando na área os termos HTML, CSS e JavaScript fazem parte da rotina das desenvolvedoras e desenvolvedores. Mas o que eles fazem, afinal? Descubra com a Vanessa!"}
       />
-      {categorias.map(categoria => {
+      {/* {categorias.map(categoria => {
         return(
           <Carousel ignoreFirstVideo
           category={categoria} />
         )
-      })}
+      })} */}
 
-      {/* <Carousel
+      <Carousel
         ignoreFirstVideo
         category={dadosIniciais.categorias[0]}
       />
@@ -49,7 +49,7 @@ function Home() {
 
       <Carousel
         category={dadosIniciais.categorias[5]}
-      />       */}
+      />      
       <Footer/>
     </div>
   );
