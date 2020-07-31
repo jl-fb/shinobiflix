@@ -16,8 +16,9 @@
     "styled-components": "^5.1.1"
   },
   "scripts": {
-    "server": "json-server --watch db.json --port 5000",
-    "start": "react-scripts start",
+    "server": "node ./server.js",
+    "dev": "concurrently \"react-scripts start\" \"node ./server.js\"",
+    "start": "npm run server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -43,6 +44,7 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.5",
-    "eslint-plugin-react-hooks": "^4.0.8"
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "concurrently": "^5.2.0"
   }
 }
