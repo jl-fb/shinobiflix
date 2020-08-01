@@ -2,16 +2,16 @@ import { useState } from 'react';
 
 // NOTE CUSTOM HOOK
 function useForm(valoresIniciais) {
-  const [categoria, setValues] = useState(valoresIniciais);
-  const mudarCategoria = (chave, valor) => {
+  const [values, setValues] = useState(valoresIniciais);
+  const setValue = (chave, valor) => {
     setValues({
-      ...categoria,
+      ...values,
       [chave]: valor,
     });
   };
 
   const handleChange = (infosDoEvento) => {
-    mudarCategoria(
+    setValue(
       infosDoEvento.target.getAttribute('name'),
       infosDoEvento.target.value,
     );
@@ -21,7 +21,7 @@ function useForm(valoresIniciais) {
 
   return {
     handleChange,
-    categoria,
+    values,
     clearForm,
   };
 }
