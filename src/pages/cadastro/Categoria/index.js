@@ -4,29 +4,18 @@ import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import BASE_URL from '../../../environments/environment';
+import useForm from '../../../hooks/useForm';
 
 function CadastroCategoria() {
   const valoresIniciais = {
-    nome: '',
+    titulo: '',
     descricao: '',
     cor: '',
   };
 
   const [categorias, setCategorias] = useState([]);
-  const [categoria, setValues] = useState(valoresIniciais);
 
-  function mudarCategoria(chave, valor) {
-    setValues({
-      ...categoria,
-      [chave]: valor,
-    });
-  }
-  function handleChange(infosDoEvento) {
-    mudarCategoria(
-      infosDoEvento.target.getAttribute('name'),
-      infosDoEvento.target.value,
-    );
-  }
+  const { categoria, handleChange, clearForm } = useForm(valoresIniciais);
 
   useEffect(() => {
     fetch(`${BASE_URL}/categorias`)
@@ -43,22 +32,22 @@ function CadastroCategoria() {
     <PageDefault>
       <h1>
         Cadastro de Categoria:
-        {categoria.nome}
+        {categoria.titulo}
       </h1>
 
       <form onSubmit={function handleSubmit(e) {
         e.preventDefault();
         setCategorias([...categorias, categoria]);
 
-        setValues(valoresIniciais);
+        clearForm(valoresIniciais);
       }}
 
       >
         <FormField
           label="Nome da Categoria:"
           type="text"
-          name="nome"
-          value={categoria.nome}
+          name="titulo"
+          value={categoria.titulo}
           onChange={handleChange}
         />
         <FormField
@@ -73,7 +62,7 @@ function CadastroCategoria() {
           label="Cor:"
           type="color"
           name="cor"
-          value={categoria.descricao}
+          value={categoria.cor}
           onChange={handleChange}
         />
 
@@ -85,7 +74,7 @@ function CadastroCategoria() {
         )}
         <ul>
           {categorias.map((categoria) => (
-            <li key={`${categoria.titulo}${Math.random(Date.now() * 1)}`}>{categoria.titulo}</li>
+            <li key={`${categoria.titulo}${categoria.id}`}>{categoria.titulo}</li>
           ))}
         </ul>
 

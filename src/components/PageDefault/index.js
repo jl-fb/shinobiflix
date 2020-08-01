@@ -1,26 +1,29 @@
-import React from 'react'
-import Menu from '../Menu'
-import Footer from '../Footer'
+import React from 'react';
+import styled, { css } from 'styled-components';
+import Menu from '../Menu';
+import Footer from '../Footer';
 
-import styled from 'styled-components'
-
-const Main  = styled.main`
+const Main = styled.main`
   background-color: var(--black);
   color: var(--white);
   flex: 1;
   padding: 20px 5% 5% 0px;
-`
+  ${({ paddingAll }) => css`
+    padding: ${paddingAll};
+  `}
+`;
 
-function PageDefault({children}) {
+// eslint-disable-next-line react/prop-types
+function PageDefault({ children, paddingAll }) {
   return (
     <>
       <Menu />
-       <Main>
+      <Main paddingAll={paddingAll}>
         {children}
-       </Main>
-      <Footer/>
+      </Main>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default PageDefault
+export default PageDefault;
