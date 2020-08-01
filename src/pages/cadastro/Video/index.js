@@ -24,7 +24,7 @@ function CadastroVideo() {
     url: ''
   });  
 
-  
+
   useEffect(() => {
     categoriasService.getAll()
       .then((resp) => {setCategorias(resp)})

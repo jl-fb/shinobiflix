@@ -15,7 +15,7 @@ function CadastroCategoria() {
 
   const [categorias, setCategorias] = useState([]);
 
-  const { categoria, handleChange, clearForm } = useForm(valoresIniciais);
+  const { values, handleChange, clearForm } = useForm(valoresIniciais);
 
   useEffect(() => {
     fetch(`${BASE_URL}/categorias`)
@@ -32,12 +32,12 @@ function CadastroCategoria() {
     <PageDefault>
       <h1>
         Cadastro de Categoria:
-        {categoria.titulo}
+        {values.titulo}
       </h1>
 
       <form onSubmit={function handleSubmit(e) {
         e.preventDefault();
-        setCategorias([...categorias, categoria]);
+        setCategorias([...categorias, values]);
 
         clearForm(valoresIniciais);
       }}
@@ -47,14 +47,14 @@ function CadastroCategoria() {
           label="Nome da Categoria:"
           type="text"
           name="titulo"
-          value={categoria.titulo}
+          value={values.titulo}
           onChange={handleChange}
         />
         <FormField
           label="Descrição:"
           type="textarea"
           name="descricao"
-          value={categoria.descricao}
+          value={values.descricao}
           onChange={handleChange}
         />
 
@@ -62,12 +62,12 @@ function CadastroCategoria() {
           label="Cor:"
           type="color"
           name="cor"
-          value={categoria.cor}
+          value={values.cor}
           onChange={handleChange}
         />
 
         <Button>Cadastrar</Button>
-        {categoria.length === 0 && (
+        {values.length === 0 && (
           <div>
             Loading...
           </div>
