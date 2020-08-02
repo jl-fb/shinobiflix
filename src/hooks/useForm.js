@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 // NOTE CUSTOM HOOK
 function useForm(valoresIniciais) {
@@ -12,8 +12,8 @@ function useForm(valoresIniciais) {
 
   const handleChange = (infosDoEvento) => {
     setValue(
-      infosDoEvento.target.getAttribute('name'),
-      infosDoEvento.target.value,
+      infosDoEvento.target.getAttribute("name"),
+      infosDoEvento.target.value
     );
   };
 

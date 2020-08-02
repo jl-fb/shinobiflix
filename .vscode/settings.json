@@ -1,0 +1,16 @@
+{
+  // Format settings + Prettir + Eslint
+  "eslint.workingDirectories": ["./src"],
+  "editor.tabCompletion": "on",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+  "editor.formatOnSave": false,
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll": true
+  },
+  "eslint.alwaysShowStatus": true,
+   // Format settings + Prettir + Eslint
+}
