@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import PageDefault from "../../../components/PageDefault";
-import FormField from "../../../components/FormField";
-import Button from "../../../components/Button";
-import useForm from "../../../hooks/useForm";
-import categoriasService from "../../../services/categorias.service";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import PageDefault from '../../../components/PageDefault';
+import FormField from '../../../components/FormField';
+import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForm';
+import categoriasService from '../../../services/categorias.service';
 
 function CadastroCategoria() {
   const valoresIniciais = {
-    titulo: "",
-    descricao: "",
-    cor: "",
+    titulo: '',
+    descricao: '',
+    cor: '',
   };
 
   const [categorias, setCategorias] = useState([]);
@@ -23,7 +23,7 @@ function CadastroCategoria() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("categoria cadastrada", values);
+    console.log('categoria cadastrada', values);
 
     categoriasService
       .create({
@@ -32,7 +32,7 @@ function CadastroCategoria() {
         cor: values.cor,
       })
       .then(() => {
-        console.log("categoria cadastrada");
+        console.log('categoria cadastrada');
         clearForm(valoresIniciais);
       });
   };

@@ -1,4 +1,4 @@
-import BASE_URL from "../environments/rotas";
+import BASE_URL from '../environments/rotas';
 
 const URL_CATEGORIAS = `${BASE_URL}/categorias`;
 
@@ -9,7 +9,7 @@ const getAll = () =>
       console.log(data);
       return data;
     }
-    throw new Error("Não foi possível pegar os dados :(");
+    throw new Error('Não foi possível pegar os dados :(');
   });
 const getCategoriasWithVideos = () =>
   fetch(`${URL_CATEGORIAS}?_embed=videos`).then(async (resp) => {
@@ -17,21 +17,21 @@ const getCategoriasWithVideos = () =>
       const data = await resp.json();
       return data;
     }
-    throw new Error("Não foi possível pegar os dados :(");
+    throw new Error('Não foi possível pegar os dados :(');
   });
 
 const create = (categoria) => {
-  console.log("CATEGORIA", categoria);
+  console.log('CATEGORIA', categoria);
   return fetch(`${BASE_URL}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(categoria),
   }).then(async (resp) => {
     if (resp.ok) {
       const data = await resp.json();
       return data;
     }
-    throw new Error("Não foi possível cadastrar a categoria");
+    throw new Error('Não foi possível cadastrar a categoria');
   });
 };
 

@@ -1,11 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./reset.css";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './reset.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Home from './pages/Home';
 
-import CadastroVideo from "./pages/cadastro/Video/index";
-import CadastroCategoria from "./pages/cadastro/Categoria/index";
+import CadastroVideo from './pages/cadastro/Video/index';
+import CadastroCategoria from './pages/cadastro/Categoria/index';
 
 const Pagina404 = () => <div>Página 404</div>;
 
@@ -20,7 +20,7 @@ ReactDOM.render(
       </Switch>
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

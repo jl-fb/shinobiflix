@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import Carousel from "../../components/Carousel";
-import BannerMain from "../../components/BannerMain";
-import categoriasService from "../../services/categorias.service";
-import PageDefault from "../../components/PageDefault";
+import React, { useEffect, useState } from 'react';
+import Carousel from '../../components/Carousel';
+import BannerMain from '../../components/BannerMain';
+import categoriasService from '../../services/categorias.service';
+import PageDefault from '../../components/PageDefault';
 // import dadosIniciais from '../../data/dados_iniciais.json';
 
 // iniciando um array do objeto retornado

@@ -1,8 +1,8 @@
-import React from "react";
-import propTypes from "prop-types";
-import { VideoCardGroupContainer, Title, ExtraLink } from "./styles";
-import VideoCard from "./components/VideoCard";
-import Slider, { SliderItem } from "./components/Slider";
+import React from 'react';
+import propTypes from 'prop-types';
+import { VideoCardGroupContainer, Title, ExtraLink } from './styles';
+import VideoCard from './components/VideoCard';
+import Slider, { SliderItem } from './components/Slider';
 
 function Carousel({ ignoreFirstVideo, category }) {
   const categoryTitle = category.titulo;
@@ -14,9 +14,7 @@ function Carousel({ ignoreFirstVideo, category }) {
     <VideoCardGroupContainer>
       {categoryTitle && (
         <>
-          <Title style={{ backgroundColor: categoryColor || "red" }}>
-            {categoryTitle}
-          </Title>
+          <Title style={{ backgroundColor: categoryColor || 'red' }}>{categoryTitle}</Title>
           {categoryExtraLink && (
             <ExtraLink href={categoryExtraLink.url} target="_blank">
               {categoryExtraLink.text}

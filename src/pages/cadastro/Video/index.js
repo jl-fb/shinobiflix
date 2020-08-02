@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
-import PageDefault from "../../../components/PageDefault";
-import FormField from "../../../components/FormField";
-import useForm from "../../../hooks/useForm";
-import Button from "../../../components/Button";
-import videoService from "../../../services/videos.service";
-import categoriasService from "../../../services/categorias.service";
+import PageDefault from '../../../components/PageDefault';
+import FormField from '../../../components/FormField';
+import useForm from '../../../hooks/useForm';
+import Button from '../../../components/Button';
+import videoService from '../../../services/videos.service';
+import categoriasService from '../../../services/categorias.service';
 
 function CadastroVideo() {
   // NOTE react libs
@@ -18,9 +18,9 @@ function CadastroVideo() {
 
   // NOTE HOOKS MEUS
   const { handleChange, values } = useForm({
-    categoria: "",
-    titulo: "",
-    url: "",
+    categoria: '',
+    titulo: '',
+    url: '',
   });
 
   useEffect(() => {
@@ -35,7 +35,7 @@ function CadastroVideo() {
     const categoriaEscolhida = categorias.find((categoria) => {
       return categoria.titulo === values.categoria;
     });
-    console.log("CATEGORIA ESCOLHID", categoriaEscolhida);
+    console.log('CATEGORIA ESCOLHID', categoriaEscolhida);
 
     videoService
       .create({
@@ -45,7 +45,7 @@ function CadastroVideo() {
       })
       .then(() => {
         // TODO VALIDAR FORM E FAZER LOADING
-        HISTORY.push("/");
+        HISTORY.push('/');
       });
   };
 
@@ -60,13 +60,7 @@ function CadastroVideo() {
           value={values.titulo}
           onChange={handleChange}
         />
-        <FormField
-          label="URL:"
-          type="text"
-          name="url"
-          value={values.url}
-          onChange={handleChange}
-        />
+        <FormField label="URL:" type="text" name="url" value={values.url} onChange={handleChange} />
 
         <FormField
           label="Categoria:"

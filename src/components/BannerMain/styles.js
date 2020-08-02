@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ContentAreaContainer = styled.section`
   margin-left: 5%;
@@ -76,7 +76,7 @@ export const BannerMainContainer = styled.section`
   }
   &:after,
   &:before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     left: 0;
@@ -96,7 +96,7 @@ export const BannerMainContainer = styled.section`
 `;
 
 export const WatchButton = styled.button`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
   cursor: pointer;
   padding: 16px 24px;
